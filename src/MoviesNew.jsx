@@ -8,6 +8,10 @@ export function MoviesNew() {
           Title: <input type="text" />
         </div>
         <br />
+        <div> 
+          Image Link: <input type="text"/>
+        </div>
+        <br/>
         <div>
           Release Date: <input type="integer" />
         </div>

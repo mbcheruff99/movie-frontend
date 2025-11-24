@@ -1,7 +1,11 @@
+import { MoviesIndex } from "./MoviesIndex";
 import { MoviesNew } from "./MoviesNew";
 
 export function MoviesPage() {
   return (
-    <MoviesNew />
+    <div>
+      <MoviesNew />
+      <MoviesIndex/>
+    </div>
   );
 }
