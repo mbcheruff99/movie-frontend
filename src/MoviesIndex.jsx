@@ -1,14 +1,14 @@
-export function MoviesIndex() {
+export function MoviesIndex(props) {
   return (
     <div id="movies-index">
-      <h1> All Movies </h1>
-      <div className="movies-index">
-        <h2> Pirates of the Carribbean</h2>
-        <img src="https://lhstoday.org/wp-content/uploads/2022/09/The-Pirates-of-the-Caribbean-The-Curse-of-the-Black-Pearl-e1648961317393-900x450.jpg" />
-        <p> Actors: Johnny Depp</p>
-        <p> Year: 2008</p>
-        <p> Plot: stuff </p>
-      </div>
+      <h1> All {props.moviesProp.length} Movies </h1>
+      {props.moviesProp.map((movie) => (
+        <div key={movie.id} className="movies"> 
+          <h2> {movie.first_name } {movie.last_name} </h2>
+        </div>
+      ))}
+
+
     </div>
   );
 }
