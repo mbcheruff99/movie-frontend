@@ -25,7 +25,7 @@ export function MoviesNew() {
         </div>
         <br />
       </form>
-      <a href="https:chabad.org">
+      <a>
         <button type="submit"> Add Movie </button>
       </a>
     </div>
