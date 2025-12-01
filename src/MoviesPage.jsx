@@ -15,7 +15,7 @@ export function MoviesPage() {
 
   
   function handleIndex() {
-    axios.get("http://localhost:3000/movies.json").then((response) => {
+    axios.get("/movies.json").then((response) => {
       console.log(response.data)
       setMovies(response.data)
     })
