@@ -5,6 +5,7 @@ export function MoviesShow( {movie} ) {
       <h2> {movie.title} </h2>
       <img src={movie.image}/>
       <p> {movie.plot} </p>
+      {/* <p> {movie.actors} </p> */}
       <h5> {movie.year} </h5>
     </div>
   )

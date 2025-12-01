@@ -27,9 +27,17 @@ export function MoviesPage() {
     setCurrentMovie(movie);
   }
 
+  function handleCreate(params) {
+    console.log("handleCreate");
+    axios.post("/movies.json", params).then((response) => {
+      console.log(response.data);
+      setMovies([...movies, response.data]);
+    })
+  }
+
   return (
     <div>
-      <MoviesNew />
+      <MoviesNew onCreate={handleCreate} />
       <MoviesIndex moviesProp={movies} onShow={handleShow} />
       <Modal show={isMoviesShowVisible} onClose={() => setIsMoviesShowVisible(false)}>
         <MoviesShow movie={currentMovie} />

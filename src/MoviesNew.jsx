@@ -1,33 +1,37 @@
 
-export function MoviesNew() {
+export function MoviesNew({onCreate}) {
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+    const params = new FormData(form);
+    onCreate(params);
+    form.reset();
+  }
+
   return (
     <div id="movies-new">
       <h1> New Movie </h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
-          Title: <input type="text" />
+          Title: <input name="title" type="text" />
         </div>
-        <br />
         <div> 
-          Image Link: <input type="text"/>
+          Image URL: <input name="image" type="text"/>
         </div>
-        <br/>
         <div>
-          Release Date: <input type="integer" />
+          Release Date: <input year="image" type="integer" />
         </div>
-        <br />
-        <div>
+        {/* <div>
           Actors: <input type="text" />
-        </div>
-        <br />
+        </div> */}
         <div>
-          Plot: <input type="text" />
+          Plot: <input name="plot" type="text" />
         </div>
-        <br />
+        <a>
+          <button type="submit" > Add Movie </button>
+        </a>
       </form>
-      <a>
-        <button type="submit"> Add Movie </button>
-      </a>
     </div>
   );
 }
