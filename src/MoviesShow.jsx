@@ -1,4 +1,4 @@
-export function MoviesShow( {movie, onUpdate } ) {
+export function MoviesShow( {movie, onUpdate, onDestroy } ) {
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -33,6 +33,7 @@ export function MoviesShow( {movie, onUpdate } ) {
         </div>
         <button type="submit" > Update Movie </button>
       </form>
+      <button onClick={() => onDestroy(movie)} > Delete Movie </button>
     </div>
   )
 }
