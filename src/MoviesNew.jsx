@@ -28,9 +28,8 @@ export function MoviesNew({onCreate}) {
         <div>
           Plot: <input name="plot" type="text" />
         </div>
-        <a>
-          <button type="submit" > Add Movie </button>
-        </a>
+        <button type="submit" > Add Movie </button>
+
       </form>
     </div>
   );

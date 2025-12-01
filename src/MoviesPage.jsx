@@ -35,12 +35,21 @@ export function MoviesPage() {
     })
   }
 
+  function handleUpdate(movie, params) {
+    console.log("handleUpdate");
+    axios.put(`/movies/${movie.id}.json`, params).then((response) => {
+      console.log(response.data)
+      setMovies(movies.map(m => m.id === response.data.id ? response.data : m));
+      setIsMoviesShowVisible(false);
+    })
+  }
+
   return (
     <div>
       <MoviesNew onCreate={handleCreate} />
       <MoviesIndex moviesProp={movies} onShow={handleShow} />
       <Modal show={isMoviesShowVisible} onClose={() => setIsMoviesShowVisible(false)}>
-        <MoviesShow movie={currentMovie} />
+        <MoviesShow movie={currentMovie} onUpdate={handleUpdate} />
       </Modal>
     </div>
   );
